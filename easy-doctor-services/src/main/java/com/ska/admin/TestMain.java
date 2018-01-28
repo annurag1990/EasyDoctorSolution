@@ -10,6 +10,7 @@ import com.ska.admin.entity.Registration;
 
 public class TestMain {
 	
+	//TODO::
 	public static void main(String[] args) throws JsonProcessingException {
 		Registration reg = new Registration();
 		Address add = new Address();
