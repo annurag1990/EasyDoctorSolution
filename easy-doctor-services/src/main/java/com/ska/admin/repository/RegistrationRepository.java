@@ -12,3 +12,4 @@ public interface RegistrationRepository extends AbstractRepository<Registration,
 	 Optional<Registration> findByName(String name);
 
 }
+
