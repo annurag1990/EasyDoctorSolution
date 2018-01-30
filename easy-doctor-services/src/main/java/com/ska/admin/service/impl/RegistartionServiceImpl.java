@@ -23,8 +23,8 @@ public class RegistartionServiceImpl implements RegistartionService{
 	}
 	
 	@Override
-	public Registration get(Long id) {
-		return registrationRepository.findOne(id);
+	public Registration get(Long docId) {
+		return registrationRepository.findOne(docId);
 	}
 
 }

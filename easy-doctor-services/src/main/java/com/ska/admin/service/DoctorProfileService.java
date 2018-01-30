@@ -5,5 +5,7 @@ import com.ska.admin.entity.DoctorProfile;
 public interface DoctorProfileService {
 	
 	DoctorProfile save(DoctorProfile doctorProfile);
+	
+	DoctorProfile get(Long docId);
 
 }

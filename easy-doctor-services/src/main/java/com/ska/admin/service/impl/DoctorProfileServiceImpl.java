@@ -21,4 +21,11 @@ public class DoctorProfileServiceImpl implements DoctorProfileService{
 		return doctorProfileRepository.save(doctorProfile);
 	}
 
+	@Override
+	public DoctorProfile get(Long docId) {
+		return doctorProfileRepository.findOne(docId);
+	}
+	
+	
+
 }

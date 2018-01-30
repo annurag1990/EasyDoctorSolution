@@ -2,11 +2,16 @@ package com.ska.admin.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class DoctorQualification implements Serializable{
@@ -27,6 +32,19 @@ public class DoctorQualification implements Serializable{
 	
 	@Column(name="passingyear",nullable = true, length=50)
     private String passingYear;
+	
+	@ManyToOne(cascade= CascadeType.ALL)
+	@JoinColumn(name="docid")
+	@JsonIgnore
+	public DoctorProfile doctorProfile;
+
+	public DoctorProfile getDoctorProfile() {
+		return doctorProfile;
+	}
+
+	public void setDoctorProfile(DoctorProfile doctorProfile) {
+		this.doctorProfile = doctorProfile;
+	}
 
 	public Long getQualificationId() {
 		return qualificationId;
@@ -59,6 +77,9 @@ public class DoctorQualification implements Serializable{
 	public void setPassingYear(String passingYear) {
 		this.passingYear = passingYear;
 	}
+	
+	
+
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;

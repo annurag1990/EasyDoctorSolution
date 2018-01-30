@@ -9,7 +9,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 
@@ -31,9 +34,20 @@ public class DoctorRegistration implements Serializable{
 	
 	@Column(name="regyear",nullable = true, length=50)
     private String regYear;
-
-
 	
+	@OneToOne(cascade=CascadeType.ALL)
+	@JsonIgnore
+	@JoinColumn(name="docid")
+	public DoctorProfile doctorProfile;
+
+
+	public DoctorProfile getDoctorProfile() {
+		return doctorProfile;
+	}
+
+	public void setDoctorProfile(DoctorProfile doctorProfile) {
+		this.doctorProfile = doctorProfile;
+	}
 
 	public Long getRegistrationId() {
 		return registrationId;

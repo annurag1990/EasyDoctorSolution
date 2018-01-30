@@ -61,42 +61,12 @@ public class DoctorProfile implements Serializable {
 	
 	
 	@OneToOne(cascade =CascadeType.ALL)
-	@JoinColumn(name="docid")
 	private DoctorRegistration doctorRegistration;
 	
-	public DoctorRegistration getDoctorRegistration() {
-		return doctorRegistration;
-	}
-
-	public void setDoctorRegistration(DoctorRegistration doctorRegistration) {
-		this.doctorRegistration = doctorRegistration;
-	}
-
-	public List<DoctorExp> getDoctorExplist() {
-		return doctorExplist;
-	}
-
-	public void setDoctorExplist(List<DoctorExp> doctorExplist) {
-		this.doctorExplist = doctorExplist;
-	}
-
-	public Set<DoctorQualification> getDoctorQualificationSet() {
-		return doctorQualificationSet;
-	}
-
-	public void setDoctorQualificationSet(Set<DoctorQualification> doctorQualificationSet) {
-		this.doctorQualificationSet = doctorQualificationSet;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
 	@OneToMany(cascade =CascadeType.ALL)
 	public List<DoctorExp>doctorExplist;
 
 	@OneToMany(cascade =CascadeType.ALL)
-	@JoinColumn(name="docid")
 	private Set<DoctorQualification>doctorQualificationSet;
 
 	public Long getDocId() {
@@ -187,13 +157,33 @@ public class DoctorProfile implements Serializable {
 		this.pin = pin;
 	}
 
-	
-	
+	public DoctorRegistration getDoctorRegistration() {
+		return doctorRegistration;
+	}
+
+	public void setDoctorRegistration(DoctorRegistration doctorRegistration) {
+		this.doctorRegistration = doctorRegistration;
+	}
+
+	public List<DoctorExp> getDoctorExplist() {
+		return doctorExplist;
+	}
+
+	public void setDoctorExplist(List<DoctorExp> doctorExplist) {
+		this.doctorExplist = doctorExplist;
+	}
+
+	public Set<DoctorQualification> getDoctorQualificationSet() {
+		return doctorQualificationSet;
+	}
+
+	public void setDoctorQualificationSet(Set<DoctorQualification> doctorQualificationSet) {
+		this.doctorQualificationSet = doctorQualificationSet;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 
 }
 	
-	
-	
-	
-
-

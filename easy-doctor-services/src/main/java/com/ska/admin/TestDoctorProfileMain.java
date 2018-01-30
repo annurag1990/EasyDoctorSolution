@@ -1,4 +1,4 @@
-package com.ska.admin;
+/*package com.ska.admin;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -39,3 +39,4 @@ public class TestDoctorProfileMain  {
 	}
 
 }
+*/
